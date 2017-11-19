@@ -1,1 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Foto WEB Online :P</title>
+	<style type="text/css">
+		#slideshow {
+			margin: 80px auto;
+			position: relative;
+			width: 840px;
+			height: 640px;
+			padding: 10px;
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+		}
 
+		#slideshow > div {
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			right: 10px;
+			bottom: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div id="navigation"></div>
+	<div id="listing"></div>
+	
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+	var hash = window.location.hash;
+
+	var BUCKET_NAME = 'fotoweb.online';
+	var BUCKET_URL = 'https://s3.amazonaws.com/fotoweb.online/';
+	if( hash != '' ){
+		var S3B_ROOT_DIR = '/' + hash;
+	}
+	var S3B_SORT = 'DEFAULT';
+	var S3_REGION = 's3'; // for us-east-1
+</script>
+<script type="text/javascript" src="img.js"></script>
+
+<div id="slideshow"></div>
+</body>
+</html>
