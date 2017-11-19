@@ -11,13 +11,11 @@ $.get(BUCKET_URL)
 		}
 	});
 
-	console.log(images);
+images.forEach(function( url){
+	$( "#slideshow" ).append( "<div><img src="+url+"></div>" );
+});
 
-	images.forEach(function( url){
-		$( "#slideshow" ).append( "<div><img src="+url+"></div>" );
-	});
-
-	$("#slideshow > div:gt(0)").hide();
+$("#slideshow > div:gt(0)").hide();
 
 setInterval(function() {
   $('#slideshow > div:first')
